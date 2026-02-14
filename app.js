@@ -117,7 +117,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    let total = sumArr.reduce(function (currentTotal, nextNumber) {
+        return sum(currentTotal, nextNumber)[0];
+  }, 0);
 
+  let message =
+    sumArr.join(',') +
+    ' was passed in as an array of numbers, and ' +
+    total +
+    ' is their sum.';
+
+  return [total, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
