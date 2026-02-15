@@ -117,22 +117,23 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(multArr) { //eslint-disable-line
-    let total = sumArr.reduce(function (currentTotal, nextNumber) {
-        return sum(currentTotal, nextNumber)[0];
-  }, 0);
+function multiplyArray(multArr) { // eslint-disable-line
+  let total = multArr.reduce(function (currentTotal, nextNumber) {
+    return multiply(currentTotal, nextNumber)[0];
+  }, 1);
 
   let message =
-    sumArr.join(',') +
-    ' was passed in as an array of numbers, and ' +
+    'The numbers ' +
+    multArr.join(',') +
+    ' have a product of ' +
     total +
-    ' is their sum.';
+    '.';
 
   return [total, message];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
